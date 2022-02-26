@@ -2,8 +2,10 @@
 
 .header {
   height: $header-height;
+  background-color: none;
+
   @include flex(center, space-between);
-  // transition: height 1s ease, background-color 1s ease; //for header show?
+  transition: height 1s ease, background-color 1s ease; //for header show?
   .logo__wrapper {
     border-radius: $border-radius;
     @include flex(flex-end, flex-start);
