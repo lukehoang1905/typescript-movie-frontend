@@ -5,7 +5,6 @@ const PublicLayout = () => {
   return (
     <div>
       <Header />
-      PublicLayout
       <Outlet />
     </div>
   );

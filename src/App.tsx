@@ -9,7 +9,7 @@ import SingleMovie from "./pages/SingleMovie";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <Routes>
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<LandingPage />} />

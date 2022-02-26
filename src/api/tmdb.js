@@ -8,23 +8,23 @@ export const collection = {
 
 const tmdbApi = {
   getMoviesList: (type, params) => {
-    const url = "movie/" + collection[type];
+    const url = `movie/${collection[type]}`;
     return axiosClient.get(url, params);
   },
   getVideos: (id) => {
-    const url = "movie/" + id + "/videos";
+    const url = `movie/${id}/videos`;
     return axiosClient.get(url, { params: {} });
   },
   search: (params) => {
-    const url = "search/" + "movie/";
+    const url = "search/movie/";
     return axiosClient.get(url, params);
   },
   detail: (id, params) => {
-    const url = "movie/" + id;
+    const url = `movie/${id}`;
     return axiosClient.get(url, params);
   },
   credits: (id) => {
-    const url = "movie/" + id + "/credits";
+    const url = `movie/${id}/credits`;
     return axiosClient.get(url, { params: {} });
   },
   similar: (id) => {
