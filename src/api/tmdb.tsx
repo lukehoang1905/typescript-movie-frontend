@@ -1,33 +1,42 @@
 import axiosClient from "./axiosClient";
 
-export const collection = {
+import type { Collection, ApiResponse } from "../interfaces/index";
+
+export const collection: Collection = {
   upcoming: "upcoming",
   popular: "popular",
   top_rated: "top_rated",
+  now_playing: "now_playing",
 };
 
 const tmdbApi = {
-  getMoviesList: (type, params) => {
+  getMoviesList: async (type: string, params: any) => {
     const url = `movie/${collection[type]}`;
-    return axiosClient.get(url, params);
+    try {
+      const data = await axiosClient.get<any, ApiResponse>(url, params);
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
   },
-  getVideos: (id) => {
+  getVideos: (id: any) => {
     const url = `movie/${id}/videos`;
     return axiosClient.get(url, { params: {} });
   },
-  search: (params) => {
+  search: (params: any) => {
     const url = "search/movie/";
     return axiosClient.get(url, params);
   },
-  detail: (id, params) => {
+  detail: (id: any, params: any) => {
     const url = `movie/${id}`;
     return axiosClient.get(url, params);
   },
-  credits: (id) => {
+  credits: (id: any) => {
     const url = `movie/${id}/credits`;
     return axiosClient.get(url, { params: {} });
   },
-  similar: (id) => {
+  similar: (id: any) => {
     const url = "movie/" + id + "/similar";
     return axiosClient.get(url, { params: {} });
   },

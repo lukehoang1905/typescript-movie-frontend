@@ -22,15 +22,15 @@ const Header = () => {
     <div className="header">
       <div className="logo__wrapper">
         <MyPlayStore size={"3rem"} title="BooMovie" />
-        {logoTitle.split("").map((e) => {
-          return <span>{e}</span>;
+        {logoTitle.split("").map((e, idx) => {
+          return <span key={e + idx}>{e}</span>;
         })}
       </div>
 
       <ul className="nav__links">
         {navLinks.map(({ name, path }) => {
           return (
-            <li className={`${path === activeLink && "active"} `}>
+            <li className={`${path === activeLink && "active"} `} key={name}>
               <Link to={path}>{name}</Link>
             </li>
           );

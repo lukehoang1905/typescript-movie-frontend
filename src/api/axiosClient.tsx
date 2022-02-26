@@ -19,8 +19,10 @@ axiosClient.interceptors.request.use(async (config) => {
 axiosClient.interceptors.response.use(
   (response) => {
     if (response && response.data) {
+      console.log("ok.data", response.data);
       return response.data;
     }
+    console.log("ok", response);
     return response;
   },
   (err) => {

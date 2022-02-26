@@ -1,7 +1,9 @@
+import MovieCarousel from "../components/MovieCarousel";
+
 const LandingPage = () => {
   return (
     <div>
-      <h1>LandingPage</h1>
+      <MovieCarousel />
     </div>
   );
 };
