@@ -4,7 +4,8 @@ import "./App.scss";
 import Footer from "./components/Footer";
 import PublicLayout from "./layouts/PublicLayout";
 import LandingPage from "./pages/LandingPage";
-import ResultPage from "./pages/ResultPage";
+import NotFoundPage from "./pages/NotFoundPage";
+import GalleryPage from "./pages/GalleryPage";
 import SingleMovie from "./pages/SingleMovie";
 
 function App() {
@@ -14,10 +15,12 @@ function App() {
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<LandingPage />} />
           <Route path="/movie">
-            <Route index element={<ResultPage />} />
+            {/* ?collection:top-rated?sort */}
+            <Route index element={<GalleryPage />} />
             <Route path=":movieId" element={<SingleMovie />} />
           </Route>
         </Route>
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
     </div>
