@@ -1,22 +1,37 @@
 @use "../scss/" as *;
 
 .carousel {
+  position: relative;
   .carousel__single--background {
     height: calc(100vh - $header-height);
+    width: 100%;
     @include flex(flex-end, unset);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     box-shadow: inset 20px 20px 100px 40px rgba(1, 1, 1, 0.7);
-  }
-  .carousel__single--info {
-    width: 25vw;
+
+    .carousel__single--info {
+      width: 30vw;
+    }
   }
   .btn-group {
-    @include flex(center, unset);
+    @include flex(flex-start, unset);
     @include mobile {
       flex-direction: column;
+      .button {
+        font-size: smaller;
+        width: 100%;
+        margin: 1em 0;
+      }
     }
+  }
+  .carousel__single--pagination {
+    height: 8em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1em;
   }
 }
