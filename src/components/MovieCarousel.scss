@@ -1,0 +1,21 @@
+@use "../scss/" as *;
+
+.carousel {
+  .carousel__single--background {
+    height: calc(100vh - $header-height);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    box-shadow: inset 0px 0px 100px 0px rgba(29, 8, 8, 0.7);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: radial-gradient(circle, transparent 50%, black 150%);
+    }
+  }
+}

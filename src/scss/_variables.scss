@@ -5,10 +5,12 @@ $txt-color: #fff;
 $white: #fff;
 $black: #000;
 
-$box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+// $box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+// $box-shadow: rgba(16, 16, 17, 0.6) 0px 10px 100px 0px;
+$box-shadow: inset 0px 0px 100px 0px rgba(29, 8, 8, 0.7);
 
-$header-height: 8rem;
-$header-shrink-height: 5rem;
+$header-height: 5rem;
+$header-shrink-height: 3rem;
 $border-radius: 30px;
 
 $mobile-width: 600px;

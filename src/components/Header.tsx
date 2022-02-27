@@ -3,6 +3,7 @@ import { PlayStore } from "styled-icons/boxicons-logos";
 import styled from "styled-components";
 
 import "./Header.scss";
+import { useEffect, useRef, useState } from "react";
 
 const navLinks = [
   { name: "Home", path: "/" },
@@ -16,10 +17,22 @@ export const MyPlayStore = styled(PlayStore)`
 `;
 const Header = () => {
   const { pathname, search } = useLocation();
+  const [scroll, setScroll] = useState(false);
   const activeLink = pathname + search;
 
+  useEffect(() => {
+    const handler = () => {
+      setScroll(true);
+      setTimeout(() => {
+        setScroll(false);
+      });
+    };
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
+
   return (
-    <div className="header">
+    <div className={`header ${scroll ? "scroll" : "noScroll"}`}>
       <div className="logo__wrapper">
         <MyPlayStore size={"3rem"} title="BooMovie" />
         {logoTitle.split("").map((e, idx) => {
