@@ -81,3 +81,24 @@ iframe {
 .section__header {
   @include flex(center, space-between);
 }
+
+.button {
+  border: 1px solid $white;
+  border-radius: 5px 5px 5px 5px;
+
+  min-width: fit-content;
+  padding-right: 1em;
+  margin-right: 1em;
+  font-size: large;
+  font-weight: bold;
+
+  background: linear-gradient(to left, transparent 50%, $main-color 50%) right;
+  background-size: 200%;
+  transition: 0.5s ease-out;
+  &:hover {
+    background-position: left;
+    border: 1px solid $main-color;
+    color: $txt-color-secondary;
+    cursor: pointer;
+  }
+}

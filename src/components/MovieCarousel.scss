@@ -3,19 +3,20 @@
 .carousel {
   .carousel__single--background {
     height: calc(100vh - $header-height);
+    @include flex(flex-end, unset);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
-    box-shadow: inset 0px 0px 100px 0px rgba(29, 8, 8, 0.7);
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      background: radial-gradient(circle, transparent 50%, black 150%);
+    box-shadow: inset 20px 20px 100px 40px rgba(1, 1, 1, 0.7);
+  }
+  .carousel__single--info {
+    width: 25vw;
+  }
+  .btn-group {
+    @include flex(center, unset);
+    @include mobile {
+      flex-direction: column;
     }
   }
 }
