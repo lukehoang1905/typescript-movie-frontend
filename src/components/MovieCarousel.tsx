@@ -4,7 +4,7 @@ import type { MovieState } from "../layouts/PublicLayout";
 import "./MovieCarousel.scss";
 
 const MovieCarousel = ({ movies }: MovieState) => {
-  const topMovies = movies.slice(0, 1);
+  const topMovies = movies.slice(4, 5);
   return (
     <div className="carousel">
       {topMovies.map((movie: MovieItem) => (

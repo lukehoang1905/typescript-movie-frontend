@@ -21,14 +21,19 @@ const Header = () => {
   const activeLink = pathname + search;
 
   useEffect(() => {
+    let timer: any;
     const handler = () => {
+      clearTimeout(timer);
       setScroll(true);
-      setTimeout(() => {
+      timer = setTimeout(() => {
         setScroll(false);
-      });
+      }, 1000);
     };
     window.addEventListener("scroll", handler);
-    return () => window.removeEventListener("scroll", handler);
+    return () => {
+      window.removeEventListener("scroll", handler);
+      clearTimeout(timer);
+    };
   }, []);
 
   return (
