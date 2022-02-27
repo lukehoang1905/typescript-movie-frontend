@@ -70,11 +70,9 @@
 }
 
 .scroll {
-  background-color: black;
+  background-color: $body-bg;
 }
 .noScroll {
   transition: ease 1.5s;
   background-color: none;
 }
-
-// background: black;
