@@ -55,9 +55,10 @@ const StylePagination = styled.ul`
   }
 `;
 
-const MovieCarousel = ({ movies }: MovieState) => {
+const MovieCarousel = ({ now }: MovieState) => {
   const [[page, direction], setPage] = useState([0, 0]);
-  const imageIndex = wrap(0, movies.length, page);
+
+  const imageIndex = wrap(0, now.length, page);
 
   const [likes, setLikes] = useState<Array<Number>>([]);
 
@@ -71,7 +72,6 @@ const MovieCarousel = ({ movies }: MovieState) => {
       setLikes((likes) => likes.filter((e) => e !== movieId));
     }
   };
-  console.log("reren");
 
   return (
     <div className="carousel">
@@ -88,7 +88,7 @@ const MovieCarousel = ({ movies }: MovieState) => {
             opacity: { duration: 2 },
           }}
         >
-          <SingleCarousel {...movies[imageIndex]} key={movies[imageIndex].id} />
+          <SingleCarousel {...now[imageIndex]} key={now[imageIndex].id} />
         </motion.div>
         <ul className="carousel__single--pagination">
           <StylePagination>
@@ -97,12 +97,12 @@ const MovieCarousel = ({ movies }: MovieState) => {
             </li>
             <li
               onClick={() =>
-                !likes.includes(movies[imageIndex].id)
-                  ? like(movies[imageIndex].id)
-                  : like(movies[imageIndex].id, false)
+                !likes.includes(now[imageIndex].id)
+                  ? like(now[imageIndex].id)
+                  : like(now[imageIndex].id, false)
               }
             >
-              {likes.includes(movies[imageIndex].id) ? (
+              {likes.includes(now[imageIndex].id) ? (
                 <FilledHeart size={40} color={"#71fadc"} />
               ) : (
                 <Heart size={40} />

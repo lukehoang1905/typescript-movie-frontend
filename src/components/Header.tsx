@@ -3,7 +3,7 @@ import { PlayStore } from "styled-icons/boxicons-logos";
 import styled from "styled-components";
 
 import "./Header.scss";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const navLinks = [
   { name: "Home", path: "/" },

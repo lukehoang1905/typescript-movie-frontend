@@ -1,10 +1,13 @@
 import MovieCarousel from "../components/MovieCarousel";
+import MovieStrip from "../components/MovieStrip";
 import { useMovies } from "../layouts/PublicLayout";
 const LandingPage = () => {
-  const { movies } = useMovies();
+  const movieState = useMovies();
+  console.log(movieState);
   return (
     <div>
-      <MovieCarousel movies={movies} />
+      <MovieCarousel now={movieState.now} />
+      <MovieStrip upcoming={movieState.upcoming} />
     </div>
   );
 };

@@ -3,7 +3,7 @@
 .carousel {
   position: relative;
   .carousel__single--background {
-    height: calc(100vh - $header-height);
+    height: calc(100vh - $header-height - $movie-strip-heigth);
     width: 100%;
     @include flex(flex-end, unset);
     background-position: center;

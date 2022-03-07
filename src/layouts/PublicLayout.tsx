@@ -5,39 +5,46 @@ import Header from "../components/Header";
 
 import type { MovieItem } from "../interfaces";
 import Loader from "../components/Loader";
-import { R } from "styled-icons/crypto";
-
-const PublicLayout = () => {
-  const [movies, setMovies] = useState<Array<MovieItem> | []>([]);
+const useFetch = (type: string) => {
+  const [movie, setMovie] = useState<Array<MovieItem> | null>(null);
   const [loading, setLoading] = useState<Boolean>(true);
-  const [scrolling, setScrolling] = useState<Boolean>(false);
-
   useEffect(() => {
-    const getMovies = async () => {
+    setLoading(true);
+    const getMovie = async () => {
       const params = { page: 1 };
       try {
-        const data = await tmdbApi.getMoviesList(collection.now_playing, {
+        const data = await tmdbApi.getMoviesList(collection[type], {
           params,
         });
-        setMovies(data.results);
+        setMovie(data.results);
         setLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
-    getMovies();
-  }, []);
-  //PAUSE here set scrolling
+    getMovie();
+  }, [type]);
+
+  return [movie, loading];
+};
+
+const PublicLayout = () => {
+  const [now, nowLoading] = useFetch("now_playing");
+  const [upcoming, upcomingLoading] = useFetch("upcoming");
 
   return (
     <div>
       <Header />
-      {loading ? <Loader /> : <Outlet context={{ movies }} />}
+      {nowLoading || upcomingLoading ? (
+        <Loader />
+      ) : (
+        <Outlet context={{ now, upcoming }} />
+      )}
     </div>
   );
 };
 export type MovieState = {
-  [movies: string]: Array<MovieItem>;
+  [now: string]: Array<MovieItem>;
 };
 export const useMovies = () => {
   return useOutletContext<MovieState>();
