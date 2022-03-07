@@ -5,6 +5,7 @@ import Header from "../components/Header";
 
 import type { MovieItem } from "../interfaces";
 import Loader from "../components/Loader";
+import apiConfig from "../api/apiConfig";
 const useFetch = (type: string) => {
   const [movie, setMovie] = useState<Array<MovieItem> | null>(null);
   const [loading, setLoading] = useState<Boolean>(true);
@@ -16,7 +17,16 @@ const useFetch = (type: string) => {
         const data = await tmdbApi.getMoviesList(collection[type], {
           params,
         });
-        setMovie(data.results);
+        const movie = data.results.map((movie) => {
+          const backgroundImage = apiConfig.originalImage(
+            movie.backdrop_path ? movie.backdrop_path : movie.poster_path
+          );
+          movie.backgroundImage = backgroundImage;
+          return movie;
+        });
+
+        setMovie(movie);
+
         setLoading(false);
       } catch (error) {
         console.log(error);

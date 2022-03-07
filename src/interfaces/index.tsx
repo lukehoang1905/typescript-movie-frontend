@@ -12,6 +12,7 @@ export interface ApiResponse {
 
 export interface MovieItem {
   adult: boolean;
+  backgroundImage: string;
   backdrop_path: string;
   genre_ids: Array<number>;
   id: number;

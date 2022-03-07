@@ -118,14 +118,11 @@ const MovieCarousel = ({ now }: MovieState) => {
   );
 };
 const SingleCarousel = (movie: MovieItem) => {
-  const backgroundImage = apiConfig.originalImage(
-    movie.backdrop_path ? movie.backdrop_path : movie.poster_path
-  );
   return (
     <div
       className="carousel__single--background"
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        backgroundImage: `url(${movie.backgroundImage})`,
       }}
     >
       <motion.div
