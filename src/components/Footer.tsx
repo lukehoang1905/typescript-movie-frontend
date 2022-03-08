@@ -42,7 +42,11 @@ const Footer = () => {
               <MyHeart size={20} />
             </span>{" "}
             by{" "}
-            <a href="https://github.com/lukehoang1905" target={"_blank"}>
+            <a
+              href="https://github.com/lukehoang1905"
+              target={"_blank"}
+              rel="noreferrer"
+            >
               Tuan Hoang
             </a>
           </p>
