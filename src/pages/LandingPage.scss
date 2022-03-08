@@ -6,3 +6,23 @@
     width: $movie-strip-rest-item-w;
   }
 }
+.movie__strip:nth-child(4) {
+  padding: 1em;
+
+  .movie__strip--wrapper {
+    @include mobile {
+      flex-direction: column;
+      img {
+        width: 100vw !important;
+        display: none;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4),
+        &:nth-child(5) {
+          display: block;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use "../scss/" as *;
+
+.footer {
+  margin-top: 5em;
+  background-image: url(../assets/footer-bg.jpeg);
+  color: rgba(255, 255, 255, 0.7);
+
+  .footer__content {
+    @include flex(center, center);
+    @include mobile {
+      flex-direction: column;
+      height: $footer-height-responsive;
+    }
+
+    height: $footer-height;
+
+    .footer__content__logo {
+      @include flex(flex-start, center);
+      width: 25%;
+    }
+    .footer__content__menus {
+      height: 100%;
+      flex-grow: 1;
+      font-size: 1.2em;
+      @include flex(center, space-around);
+      div {
+        @include flex(flex-start, center);
+        flex-direction: column;
+        text-align: left;
+
+        height: 100%;
+      }
+    }
+  }
+  .signature {
+    text-align: right;
+    align-self: flex-end;
+    font-size: 0.8em;
+    color: rgba(255, 255, 255, 0.7);
+    &:hover {
+      cursor: default;
+    }
+    @include mobile {
+      border: 1px solid green;
+      margin-bottom: 2em;
+    }
+  }
+}

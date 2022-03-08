@@ -56,7 +56,7 @@ const PublicLayout = () => {
   );
 };
 export type MovieState = {
-  [now: string]: Array<MovieItem>;
+  [keyName: string]: Array<MovieItem>;
 };
 export const useMovies = () => {
   return useOutletContext<MovieState>();

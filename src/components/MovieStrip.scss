@@ -16,19 +16,17 @@
 
     word-wrap: none;
     img {
-      width: 20em;
+      width: $movie-strip-1-item-w;
     }
+
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
       display: none;
     }
-    @include mobile {
-      flex-direction: column;
-      img {
-        border: 1px solid red;
-        width: 100vw !important;
-      }
-    }
+  }
+  @include mobile {
+    margin: 1em;
+    text-align: center;
   }
 }

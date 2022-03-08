@@ -9,19 +9,6 @@
   @include flex(center, space-between);
   transition: height 1s ease, background-color 1s ease; //for header show?
 
-  .logo__wrapper {
-    border-radius: $border-radius;
-    @include flex(flex-end, flex-start);
-
-    span {
-      font-size: 2rem;
-      font-weight: bold;
-      &:nth-child(odd) {
-        color: $main-color;
-      }
-    }
-  }
-
   .nav__links {
     @include flex(center, space-between);
 
@@ -75,4 +62,16 @@
 .noScroll {
   transition: ease 1.5s;
   background-color: none;
+}
+.logo__wrapper {
+  border-radius: $border-radius;
+  @include flex(flex-end, flex-start);
+
+  span {
+    font-size: 2rem;
+    font-weight: bold;
+    &:nth-child(odd) {
+      color: $main-color;
+    }
+  }
 }

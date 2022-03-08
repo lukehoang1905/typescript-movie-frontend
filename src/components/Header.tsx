@@ -38,13 +38,7 @@ const Header = () => {
 
   return (
     <div className={`header ${scroll ? "scroll" : "noScroll"}`}>
-      <div className="logo__wrapper">
-        <MyPlayStore size={"3rem"} title="BooMovie" />
-        {logoTitle.split("").map((e, idx) => {
-          return <span key={e + idx}>{e}</span>;
-        })}
-      </div>
-
+      <MyLogo />
       <ul className="nav__links">
         {navLinks.map(({ name, path }) => {
           return (
@@ -54,6 +48,17 @@ const Header = () => {
           );
         })}
       </ul>
+    </div>
+  );
+};
+
+export const MyLogo = () => {
+  return (
+    <div className="logo__wrapper">
+      <MyPlayStore size={"3rem"} title="BooMovie" />
+      {logoTitle.split("").map((e, idx) => {
+        return <span key={e + idx}>{e}</span>;
+      })}
     </div>
   );
 };
