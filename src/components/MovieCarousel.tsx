@@ -1,5 +1,5 @@
 import { Play } from "styled-icons/boxicons-regular";
-import apiConfig from "../api/apiConfig";
+
 import { MovieItem } from "../interfaces";
 import type { MovieState } from "../layouts/PublicLayout";
 import { AnimatePresence, motion } from "framer-motion";
