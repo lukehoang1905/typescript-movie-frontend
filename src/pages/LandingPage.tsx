@@ -1,6 +1,7 @@
 import MovieCarousel from "../components/MovieCarousel";
 import MovieStrip from "../components/MovieStrip";
 import { useMovies } from "../layouts/PublicLayout";
+import "./LandingPage.scss";
 const LandingPage = () => {
   const movieState = useMovies();
   console.log(movieState);
@@ -8,6 +9,9 @@ const LandingPage = () => {
     <div>
       <MovieCarousel now={movieState.now} />
       <MovieStrip upcoming={movieState.upcoming} />
+
+      <MovieStrip popular={movieState.popular} />
+      <MovieStrip toprated={movieState.toprated} />
     </div>
   );
 };

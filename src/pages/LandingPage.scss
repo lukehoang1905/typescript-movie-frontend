@@ -1,0 +1,8 @@
+@use "../scss/" as *;
+
+.movie__strip:nth-child(3),
+.movie__strip:nth-child(4) {
+  img {
+    width: $movie-strip-rest-item-w;
+  }
+}

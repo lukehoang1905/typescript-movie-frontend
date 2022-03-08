@@ -41,14 +41,16 @@ const useFetch = (type: string) => {
 const PublicLayout = () => {
   const [now, nowLoading] = useFetch("now_playing");
   const [upcoming, upcomingLoading] = useFetch("upcoming");
+  const [popular, popularLoading] = useFetch("popular");
+  const [toprated, topratedLoading] = useFetch("top_rated");
 
   return (
     <div>
       <Header />
-      {nowLoading || upcomingLoading ? (
+      {nowLoading || upcomingLoading || popularLoading || topratedLoading ? (
         <Loader />
       ) : (
-        <Outlet context={{ now, upcoming }} />
+        <Outlet context={{ now, upcoming, popular, toprated }} />
       )}
     </div>
   );

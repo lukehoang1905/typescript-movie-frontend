@@ -1,16 +1,24 @@
+@use "../scss/" as *;
+
 .movie__strip {
-  h2 {
+  .movie__strip--title {
     margin: 1em 0;
+    &::first-letter {
+      text-transform: uppercase;
+    }
+    letter-spacing: 0.1em;
   }
   .movie__strip--wrapper {
     display: flex;
     flex-wrap: nowrap;
     overflow: scroll;
     gap: 1em;
-    * {
-      word-wrap: none;
+
+    word-wrap: none;
+    img {
       width: 20em;
     }
+
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
     &::-webkit-scrollbar {
