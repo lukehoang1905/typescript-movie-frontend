@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
 
 const navLinks = [
   { name: "Home", path: "/" },
-  { name: "Top Rated", path: "/movie?collection=top-rated" },
-  { name: "Popular", path: "/movie?collection=popular" },
+  { name: "Browse", path: "/browse" },
+  { name: "Favorite", path: "/favorite" },
 ];
 const logoTitle = "BOOVIE";
 

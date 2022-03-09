@@ -4,7 +4,7 @@ import { useMovies } from "../layouts/PublicLayout";
 import "./LandingPage.scss";
 const LandingPage = () => {
   const movieState = useMovies();
-  console.log(movieState);
+
   return (
     <div>
       <MovieCarousel now={movieState.now} />

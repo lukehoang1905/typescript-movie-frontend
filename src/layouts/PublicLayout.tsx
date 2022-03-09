@@ -6,6 +6,7 @@ import Header from "../components/Header";
 import type { MovieItem } from "../interfaces";
 import Loader from "../components/Loader";
 import apiConfig from "../api/apiConfig";
+
 const useFetch = (type: string) => {
   const [movie, setMovie] = useState<Array<MovieItem> | null>(null);
   const [loading, setLoading] = useState<Boolean>(true);

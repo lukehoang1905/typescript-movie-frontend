@@ -12,6 +12,7 @@ import { CheveronDown, CheveronUp } from "styled-icons/zondicons";
 import styled from "styled-components";
 import { Heart } from "styled-icons/evil";
 import { HeartFullOutline as FilledHeart } from "styled-icons/typicons";
+import { useNavigate } from "react-router-dom";
 
 const variants = {
   enter: (direction: number) => {
@@ -117,7 +118,10 @@ const MovieCarousel = ({ now }: MovieState) => {
     </div>
   );
 };
+
 const SingleCarousel = (movie: MovieItem) => {
+  const navigate = useNavigate();
+
   return (
     <div
       className="carousel__single--background"
@@ -142,13 +146,14 @@ const SingleCarousel = (movie: MovieItem) => {
             />
             <span>Watch now </span>
           </div>
-          <div className="button">
-            <Play
-              size={40}
-              onClick={() => {
-                console.log("s");
-              }}
-            />
+          <div
+            className="button"
+            onClick={() => {
+              navigate(`/browse/${movie.id}`);
+              console.log("click");
+            }}
+          >
+            <Play size={40} />
             <span>See more</span>
           </div>
         </div>

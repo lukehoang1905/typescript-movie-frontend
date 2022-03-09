@@ -14,11 +14,12 @@ function App() {
       <Routes>
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<LandingPage />} />
-          <Route path="/movie">
+          <Route path="/browse">
             {/* ?collection:top-rated?sort */}
             <Route index element={<GalleryPage />} />
             <Route path=":movieId" element={<SingleMovie />} />
           </Route>
+          <Route path="/favorite" element={<GalleryPage />}></Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
