@@ -2,6 +2,7 @@
 
 .footer {
   margin-top: 5em;
+  padding-bottom: 2em;
   background-image: url(../assets/footer-bg.jpeg);
   color: rgba(255, 255, 255, 0.7);
 
@@ -35,14 +36,11 @@
   .signature {
     text-align: right;
     align-self: flex-end;
+    padding-right: 1em;
     font-size: 0.8em;
     color: rgba(255, 255, 255, 0.7);
     &:hover {
       cursor: default;
-    }
-    @include mobile {
-      border: 1px solid green;
-      margin-bottom: 2em;
     }
   }
 }
