@@ -22,6 +22,9 @@ const useFetch = (type: string) => {
             movie.backdrop_path ? movie.backdrop_path : movie.poster_path
           );
           movie.backgroundImage = backgroundImage;
+          movie.posterImage = apiConfig.w500Image(
+            movie.poster_path ? movie.poster_path : movie.backdrop_path
+          );
           return movie;
         });
 

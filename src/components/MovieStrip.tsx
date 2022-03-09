@@ -8,8 +8,8 @@ const MovieStrip = (data: MovieState) => {
       <div className="movie__strip--wrapper">
         {value.map((movie) => (
           <img
-            src={movie.backgroundImage}
-            key={movie.backgroundImage}
+            src={movie.posterImage}
+            key={movie.posterImage}
             alt={movie.title}
           />
         ))}
