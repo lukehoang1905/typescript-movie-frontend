@@ -1,30 +1,37 @@
-import { useEffect, useRef, useState } from "react";
-import { Set } from "typescript";
-import tmdbApi from "../api/tmdb";
-import { GenreDict } from "../interfaces";
-import { useFetch, useMovies } from "../layouts/PublicLayout";
+import { useEffect, useState } from "react";
+
+import MovieGallery from "../components/MovieGallery";
+import { useMovies } from "../layouts/PublicLayout";
 
 import "./GalleryPage.scss";
 
 const GalleryPage = () => {
-  const [filtered, setFiltered] = useState([]);
+  const [filter, setFilter] = useState("all");
   const [genres, setGenres] = useState();
-  const movies = useMovies();
+  const movies = useMovies().popular;
 
   useEffect(() => {
-    let genresList: any = new Set();
-    movies.popular.map((e) => e.genre_name.forEach((i) => genresList.add(i)));
+    let genresList: any = new Set(["all"]);
+    movies.map((e) => e.genre_name.forEach((i) => genresList.add(i)));
     genresList = Array.from(genresList);
     setGenres(genresList);
   }, [movies]);
-  return <>{false ? <h1>loading...</h1> : <FilterGroup genres={genres} />}</>;
+
+  return (
+    <>
+      {" "}
+      <FilterGroup genres={genres} setFiltered={setFilter} />
+      <MovieGallery movies={movies} filter={filter} />
+    </>
+  );
 };
 
-const FilterGroup = ({ genres }: any) => {
+const FilterGroup = ({ genres, setFiltered }: any) => {
   const [active, setActive] = useState<string | null>(null);
-  console.log(genres);
+
   const handleFilter = (e: string) => {
     setActive((active) => e);
+    setFiltered(e);
   };
   const checkActive = (e: string) => {
     return e === active ? "active" : "";

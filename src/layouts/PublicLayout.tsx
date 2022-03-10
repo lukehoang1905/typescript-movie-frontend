@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useOutletContext } from "react-router-dom";
 import tmdbApi, { collection } from "../api/tmdb";
 import Header from "../components/Header";

@@ -139,19 +139,13 @@ const SingleCarousel = (movie: MovieItem) => {
         <br />
         <div className="btn-group">
           <div className="button">
-            <Play
-              size={40}
-              onClick={() => {
-                console.log("s");
-              }}
-            />
+            <Play size={40} onClick={() => {}} />
             <span>Watch now </span>
           </div>
           <div
             className="button"
             onClick={() => {
               navigate(`/browse/${movie.id}`);
-              console.log("click");
             }}
           >
             <Info size={40} />

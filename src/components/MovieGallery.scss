@@ -1,0 +1,13 @@
+@use "../scss/" as *;
+
+.movie__gallery {
+  padding: auto;
+  @include flex(center, center);
+  .movie__gallery--wrapper {
+    max-width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 2em;
+  }
+}
