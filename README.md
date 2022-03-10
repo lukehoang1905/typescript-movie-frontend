@@ -9,7 +9,7 @@ v.0.0.0
 - Sass
 - React router v6
 - Redux-toolkit
--
+- Framer motion
 - API from themoviedb.com
 
 ## Creditable
