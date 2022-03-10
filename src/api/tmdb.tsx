@@ -20,6 +20,17 @@ const tmdbApi = {
       throw error;
     }
   },
+  getGenres: async () => {
+    const url = `genre/movie/list`;
+
+    try {
+      const data = await axiosClient.get<any, ApiResponse>(url, { params: {} });
+      return data;
+    } catch (error) {
+      console.log(error);
+      throw error;
+    }
+  },
   getVideos: (id: any) => {
     const url = `movie/${id}/videos`;
     return axiosClient.get(url, { params: {} });

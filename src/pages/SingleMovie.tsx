@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import tmdbApi from "../api/tmdb";
+import { useMovies } from "../layouts/PublicLayout";
 
 const SingleMovie = () => {
   const { movieId } = useParams();

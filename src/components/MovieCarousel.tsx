@@ -13,6 +13,7 @@ import styled from "styled-components";
 import { Heart } from "styled-icons/evil";
 import { HeartFullOutline as FilledHeart } from "styled-icons/typicons";
 import { useNavigate } from "react-router-dom";
+import { Info } from "styled-icons/bootstrap/";
 
 const variants = {
   enter: (direction: number) => {
@@ -153,7 +154,7 @@ const SingleCarousel = (movie: MovieItem) => {
               console.log("click");
             }}
           >
-            <Play size={40} />
+            <Info size={40} />
             <span>See more</span>
           </div>
         </div>

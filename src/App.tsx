@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
-import Footer from "./components/Footer";
 import PublicLayout from "./layouts/PublicLayout";
 import LandingPage from "./pages/LandingPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -14,16 +13,14 @@ function App() {
       <Routes>
         <Route path="/" element={<PublicLayout />}>
           <Route index element={<LandingPage />} />
-          <Route path="/browse">
-            {/* ?collection:top-rated?sort */}
-            <Route index element={<GalleryPage />} />
+          <Route path="/browse" element={<GalleryPage />} />
+          <Route path="/movie">
             <Route path=":movieId" element={<SingleMovie />} />
           </Route>
           <Route path="/favorite" element={<GalleryPage />}></Route>
         </Route>
         <Route path="*" element={<NotFoundPage />} />
       </Routes>
-      <Footer />
     </div>
   );
 }

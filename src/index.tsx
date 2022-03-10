@@ -6,7 +6,6 @@ import App from "./App";
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      {/* aka Public layout */}
       <App />
     </BrowserRouter>
   </React.StrictMode>,

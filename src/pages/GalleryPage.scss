@@ -1,0 +1,17 @@
+@use "/src/scss/" as *;
+
+.filter__button--wrapper {
+  @include flex(center, center);
+  max-width: 70%;
+  margin: 2em auto;
+  height: $header-height;
+  flex-wrap: wrap;
+  .button {
+    padding-left: 0.8em;
+  }
+  .active {
+    background: $main-color 50%;
+    color: $txt-color-secondary;
+    border: 1px solid $main-color;
+  }
+}
