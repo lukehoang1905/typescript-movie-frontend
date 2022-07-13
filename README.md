@@ -1,6 +1,6 @@
 # Front-end Movie App
 
-[Check out the demo](boovie-tmdb.netlify.app)
+[Check out the demo](https://boovie-tmdb.netlify.app)
 
 ## Description
 
